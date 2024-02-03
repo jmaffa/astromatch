@@ -1,6 +1,9 @@
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import LoginButton from "./components/login-btn";
+import Header from "./components/header";
+
 
 type ConnectionStatus = {
   isConnected: boolean;
@@ -35,7 +38,8 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="container">
+    <div>
+      <Header />
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -45,6 +49,8 @@ export default function Home({
         <h1 className="text-purple-400">
           Welcome to <a href="https://nextjs.org" className="text-purple-400">Next.js with MongoDB!</a>
         </h1>
+       
+
 
         {isConnected ? (
           <h2 className="subtitle">You are connected to MongoDB</h2>
