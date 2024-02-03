@@ -3,6 +3,7 @@ import clientPromise from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import LoginButton from "./components/login-btn";
 import Header from "./components/header";
+import Form from "./components/form";
 
 
 type ConnectionStatus = {
@@ -39,7 +40,14 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
-      <Header />
+      <div>
+        <Header />
+        <div className="flex items-center space-x-2 lg:space-x-6">
+        {/* something here */}
+        <Form />
+        </div>
+      </div>
+      
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

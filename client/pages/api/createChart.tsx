@@ -29,6 +29,7 @@ export type CreateChartParams = {
 
 const createChart = async (params: CreateChartParams) => {
   try {
+    console.log(params)
     const client = await clientPromise;
     const db = client.db("charts");
     const astrologyApiUrl =
@@ -101,6 +102,6 @@ export default async (
 
     res.json({ insertedId });
   } catch (e) {
-    res.json({ error: "An error occurred while fetching data" });
+    res.json({ error: "An error occurred while fetching data, error:" + e });
   }
 };
