@@ -15,7 +15,7 @@ export type Planet = {
 
 export type CreateChartParams = {
   name: string;
-  gender: number;
+  gender: string;
   email: string;
   day: number;
   month: number;
@@ -66,16 +66,14 @@ const createChart = async (params: CreateChartParams) => {
     const risingSign = astrologyApiResponse.data.houses.get[0].sign; // because rising = first house
 
     // insert into db, user id generated for us
-    const res = await db
-      .collection("chart")
-      .insertOne({
-        name: params.name,
-        gender: params.gender,
-        email: params.email,
-        venusSign,
-        moonSign,
-        risingSign,
-      });
+    const res = await db.collection("chart").insertOne({
+      name: params.name,
+      gender: params.gender,
+      email: params.email,
+      venusSign,
+      moonSign,
+      risingSign,
+    });
 
     return res.insertedId;
   } catch (e) {
