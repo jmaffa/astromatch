@@ -37,7 +37,7 @@ type ConnectionStatus = {
   }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return (
         <div className="container">
-            <h1>Results</h1>
+            <h1 class=>Results</h1>
         </div>
     )
   }
