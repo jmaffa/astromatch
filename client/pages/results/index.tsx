@@ -107,6 +107,9 @@ type ConnectionStatus = {
               </div>
             ))}
           </div>
+          <div className="-ml-5">
+            <img src="/results-planet.svg"></img>
+          </div>
         </div>
     )
   }
