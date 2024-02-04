@@ -71,7 +71,7 @@ export default function Signup() {
       <div className="flex justify-between">
         <div className="text-white px-5">
           {/* TODO: Make this a button that navigates you home */}
-          <h1 className="text-xl pt-6">←</h1>
+          <h1 className="text-xl pt-6"><Link href='/'>←</Link></h1>
           <p className="pt-2 mt-6 w-1/2">(Pre Step) Calculate your birth chart! To find your list of matches, please calculate your birth chart <a target="_blank" href="https://astro-charts.com/" className="text-tertiary underline transition ease-in-out">here</a> and fill out the form when you have your results. </p>
                 
         </div>
