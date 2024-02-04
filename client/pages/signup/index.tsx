@@ -2,6 +2,7 @@ import { InferGetServerSidePropsType } from "next";
 import { getServerSideProps } from "..";
 import { useState } from "react";
 import { send } from "process";
+import Link from "next/link";
 
 // primary (background 191941)
 // secondary (buttons) CB18B9
@@ -50,10 +51,12 @@ export default function Signup() {
             
             {/* Arrows */}
             <div className="flex justify-between px-5">
-                <div className="text-white">
+                <div className="text-white flex-col align-middle pt-8">
                     {/* TODO: Make this a button that navigates you home */}
-                    <h1>←</h1>
-                    <button>
+                    <button className="flex w-1/2 bg-secondary hover:bg-secondary text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        <Link href='/'>Home</Link>
+                    </button>
+                    <button className="flex w-full">
                         <a target="_blank" href="https://astro-charts.com/">Calculate your birth chart!</a>
                     </button>
                 </div>
