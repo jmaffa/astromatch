@@ -13,14 +13,23 @@ export default async (
     const client = await clientPromise;
     const db = client.db("charts");
 
-    const { name, email, gender, preference, venusSign, moonSign, risingSign } =
-      req.body; // Extract the parameters
+    const {
+      name,
+      email,
+      gender,
+      preference,
+      genderPreference,
+      venusSign,
+      moonSign,
+      risingSign,
+    } = req.body; // Extract the parameters
     // insert into db, user id generated for us
     const res = await db.collection("chart").insertOne({
       name: name,
       gender: gender,
       email: email,
       preference: preference,
+      genderPreference: genderPreference,
       venusSign,
       moonSign,
       risingSign,

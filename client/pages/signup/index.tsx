@@ -2,17 +2,33 @@ import { InferGetServerSidePropsType } from "next";
 import { getServerSideProps } from "..";
 import { useState } from "react";
 import { send } from "process";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 // primary (background 191941)
 // secondary (buttons) CB18B9
 // other buttons AB8AE7
 // white F7F7F7
 export default function Signup() {
+  const { data: session } = useSession();
   const [name, setName] = useState("");
   const [rising, setRising] = useState("");
   const [moon, setMoon] = useState("");
   const [venus, setVenus] = useState("");
   const [ownGender, setOwnGender] = useState("");
+  const [preference, setPreference] = useState("");
+  const [genderPreference, setGenderPreference] = useState("");
+
+  const handleGenderChange = (ownGender: string) => {
+    setOwnGender(ownGender);
+  };
+
+  const handlePreferenceChange = (preference: string) => {
+    setPreference(preference);
+  };
+
+  const handleGenderPreferenceChange = (genderPreference: string) => {
+    setGenderPreference(genderPreference);
+  };
 
   // TODO: needs to read the radio buttons then send those values along :)
   const postData = async () => {
@@ -23,12 +39,14 @@ export default function Signup() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: "John Doe",
-          gender: "Male",
-          email: "john@example.com",
-          preference: "Female",
-          venusSign: "Aries",
-          moonSign: "Leo",
+          name: name,
+          gender: ownGender,
+          email: session && session.user ? session.user.email : "null",
+          preference: preference,
+          genderPreference: genderPreference,
+          venusSign: venus.toLowerCase,
+          moonSign: moon.toLowerCase,
+          risingSign: rising.toLowerCase,
         }),
       });
       const data = await res.json();
@@ -101,6 +119,7 @@ export default function Signup() {
                   type="radio"
                   name="radio"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderChange("Male")}
                 />
                 <label
                   htmlFor="radio1"
@@ -115,6 +134,7 @@ export default function Signup() {
                   type="radio"
                   name="radio"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderChange("Female")}
                 />
                 <label
                   htmlFor="radio2"
@@ -129,6 +149,7 @@ export default function Signup() {
                   type="radio"
                   name="radio"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderChange("Non-Binary")}
                 />
                 <label
                   htmlFor="radio3"
@@ -200,6 +221,7 @@ export default function Signup() {
                   type="radio"
                   name="dating"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handlePreferenceChange("Romantic")}
                 />
                 <label
                   htmlFor="radio4"
@@ -214,6 +236,7 @@ export default function Signup() {
                   type="radio"
                   name="dating"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handlePreferenceChange("Platonic")}
                 />
                 <label
                   htmlFor="radio5"
@@ -239,6 +262,7 @@ export default function Signup() {
                   type="radio"
                   name="gender"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderPreferenceChange("Male")}
                 />
                 <label
                   htmlFor="radio6"
@@ -253,6 +277,7 @@ export default function Signup() {
                   type="radio"
                   name="gender"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderPreferenceChange("Female")}
                 />
                 <label
                   htmlFor="radio7"
@@ -267,6 +292,7 @@ export default function Signup() {
                   type="radio"
                   name="gender"
                   className="transition duration-200 hover:scale-125"
+                  onChange={() => handleGenderPreferenceChange("Non-Binary")}
                 />
                 <label
                   htmlFor="radio8"
