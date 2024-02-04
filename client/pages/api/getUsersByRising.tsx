@@ -13,7 +13,7 @@ export default async (
     const client = await clientPromise;
     const db = client.db("charts");
 
-    const { venusSign } = req.params; // Extract the rising sign parameter
+    const { venusSign } = req.body; // Extract the rising sign parameter
 
     // Find your romantic matches
     const usersWithMatchingVenusSign = await db
