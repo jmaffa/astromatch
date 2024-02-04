@@ -45,12 +45,13 @@ export default function Signup() {
           email: session && session.user ? session.user.email : "null",
           preference: preference,
           genderPreference: genderPreference,
-          venusSign: venus.toLowerCase,
-          moonSign: moon.toLowerCase,
-          risingSign: rising.toLowerCase,
+          venusSign: venus.toLowerCase(),
+          moonSign: moon.toLowerCase(),
+          risingSign: rising.toLowerCase(),
         }),
       });
       const data = await res.json();
+      console.log(data);
 
       if (res.ok) {
         console.log("Success:", data);

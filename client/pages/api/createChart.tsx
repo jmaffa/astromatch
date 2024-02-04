@@ -30,9 +30,9 @@ export default async (
       email: email,
       preference: preference,
       genderPreference: genderPreference,
-      venusSign,
-      moonSign,
-      risingSign,
+      venusSign: venusSign,
+      moonSign: moonSign,
+      risingSign: risingSign,
     });
 
     return res.insertedId;
