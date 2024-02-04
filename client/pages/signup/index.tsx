@@ -3,6 +3,7 @@ import { getServerSideProps } from "..";
 import { useState } from "react";
 import { send } from "process";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 // primary (background 191941)
 // secondary (buttons) CB18B9
