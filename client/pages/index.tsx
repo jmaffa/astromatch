@@ -47,18 +47,18 @@ export default function Home({
 
       <Header />
 
-      <div className="flex justify-between items-center h-full px-8">
+      <div className="flex justify-between items-center h-full pl-8">
         {/* Text container */}
         <div className="max-w-lg space-y-6">
-          <h1 className="text-5xl font-extrabold text-violet-100">
-            <span className="block text-violet-500">Your Perfect</span>
-            <span className="block text-indigo-800">Match in the Stars</span>
+          <h1 className="text-5xl font-extrabold text-white">
+            <span className="block text-white">Your Perfect</span>
+            <span className="block text-white">Match in the Stars</span>
           </h1>
-          <p className="text-gray-300">
+          <p className="text-white">
             Discover the magic of AstroMatch, where celestial energies unite hearts
             in perfect alignment...
           </p>
-          <button className="px-6 py-3 bg-violet-500 text-white rounded-full font-bold">
+          <button className="px-6 py-3 bg-secondary text-white rounded-full font-bold">
             <Link href='/signup'>Start Here</Link>
           </button>
         </div>
