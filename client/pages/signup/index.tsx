@@ -309,7 +309,7 @@ export default function Signup() {
       <div className="flex-col h-full bg-primary flex justify-center items-center pb-10">
         <button
           onClick={postData}
-          className="bg-secondary hover:bg-secondary text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          className="bg-secondary text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded transition-transform transform hover:scale-105"
         >
           Done
         </button>
