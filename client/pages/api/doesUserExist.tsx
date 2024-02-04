@@ -17,7 +17,7 @@ export default async (
     const client = await clientPromise;
     const db = client.db("charts");
 
-    const { email } = req.params; // Extract the parameter
+    const { email } = req.body; // Extract the parameter
 
     const existingUser = await db.collection("chart").findOne({ email });
     const exists = !!existingUser; // boolean
