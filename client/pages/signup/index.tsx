@@ -12,6 +12,7 @@ export default function Signup() {
     const [rising, setRising] = useState('')
     const [moon, setMoon] = useState('')
     const [venus, setVenus] = useState('')
+    const [ownGender, setOwnGender] = useState('')
 
     // TODO: needs to read the radio buttons then send those values along :)
     const postData = async () => {
@@ -52,6 +53,9 @@ export default function Signup() {
                 <div className="text-white">
                     {/* TODO: Make this a button that navigates you home */}
                     <h1>←</h1>
+                    <button>
+                        <a target="_blank" href="https://astro-charts.com/">Calculate your birth chart!</a>
+                    </button>
                 </div>
                 {/* TODO: Make the planet fit lol */}
                 <div className="flex-1 flex justify-end items-end overflow-hidden">

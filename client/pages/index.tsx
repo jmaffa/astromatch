@@ -3,6 +3,7 @@ import clientPromise from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import LoginButton from "./components/login-btn";
 import Header from "./components/header";
+import Link from "next/link";
 
 
 type ConnectionStatus = {
@@ -58,7 +59,7 @@ export default function Home({
             in perfect alignment...
           </p>
           <button className="px-6 py-3 bg-violet-500 text-white rounded-full font-bold">
-            Start Here
+            <Link href='/signup'>Start Here</Link>
           </button>
         </div>
 
