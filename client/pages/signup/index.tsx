@@ -8,7 +8,7 @@ import { send } from "process";
 // other buttons AB8AE7
 // white F7F7F7
 export default function Signup() {
-    const [nameTemp, setNameTemp] = useState('')
+    const [name, setName] = useState('')
     const email = useState('')
     const birthday = useState('')
     const birthHour = useState('')
@@ -17,7 +17,7 @@ export default function Signup() {
     
     const postData = async () => {
         try{
-            const req = await fetch('/api/createChart', {
+            const res = await fetch('/api/createChart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,16 +60,15 @@ export default function Signup() {
             {/* form */}
             <div className="flex-row">
                 {/* left half */}
-                <div className="flex flex-row">
+                <div className="flex flex-row justify-start pl-8">
                     <div className="text-white text-left px-4 py-1 m-2">
-                        <p>1_________________</p>
-                        <p className="pl-3">Name</p>
+                        <hr></hr>
+                        <p className="font-share-tech">Name</p>
                     </div>
-                    <div className="text-white text-center px-4 py-2 m-2">
-                        <input className="bg-primary text-white" type="text" placeholder="Name" value={nameTemp} onChange={e => setNameTemp(e.target.value)}></input>
+                    <div className="text-white text-center px-4 py-1 m-2">
+                        <input className="bg-primary-light text-white" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}></input>
                     </div>
                 </div>
-                {/* right half */}
                 
             </div>
             <button onClick={postData} className="bg-secondary hover:bg-secondary text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">

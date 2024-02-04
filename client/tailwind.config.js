@@ -4,12 +4,17 @@ module.exports = {
     "./pages/**/*.{js,ts,tsx,jsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'share-tech': ['Share Tech', 'sans-serif'],
+      },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#F7F7F7',
       'primary': '#191941',
+      'primary-light': '#2D2D4F',
       'secondary': '#CB18B9',
       'tertiary': '#AB8AE7',
     },

@@ -1,7 +1,14 @@
-/* FILEPATH: /Users/joemaffa/Desktop/personal-projects/astromatch/client/pages/globals.css */
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Add your custom global styles here */
+@font-face {
+    font-family: 'share-tech';
+    src: url('../public/fonts/ShareTech-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'share-tech', sans-serif;
+  }
