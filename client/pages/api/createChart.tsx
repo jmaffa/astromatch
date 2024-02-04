@@ -116,7 +116,7 @@ export default async (
     const client = await clientPromise;
     const db = client.db("charts");
 
-    const { name, email, gender, venusSign, moonSign, risingSign } = req.params; // Extract the parameters
+    const { name, email, gender, venusSign, moonSign, risingSign } = req.body; // Extract the parameters
     // insert into db, user id generated for us
     const res = await db.collection("chart").insertOne({
       name: name,
