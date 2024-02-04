@@ -47,25 +47,24 @@ export default function Home({
 
       <Header />
 
-      <div className="flex justify-between items-center h-full pl-8">
+      <div className="flex justify-between items-center h-full pl-9 ml-8">
         {/* Text container */}
         <div className="max-w-lg space-y-6">
-          <h1 className="text-5xl font-extrabold text-white">
+          <h1 className="text-6xl font-extrabold text-white">
             <span className="block text-white">Your Perfect</span>
             <span className="block text-white">Match in the Stars</span>
           </h1>
-          <p className="text-white">
-            Discover the magic of AstroMatch, where celestial energies unite hearts
-            in perfect alignment...
+          <p className="text-white text-xl">
+          Discover the magic of AstroMatch, where celestial energies unite hearts in perfect alignment. Immerse yourself in a world where zodiacs dance and connections are written in the stars. AstroMatch brings you a cosmic dating experience like no other.
           </p>
-          <button className="px-6 py-3 bg-secondary text-white rounded-full font-bold">
+          <button className="px-6 py-3 bg-secondary text-white rounded-full font-bold hover:bg-opacity-80">
             <Link href='/signup'>Start Here</Link>
           </button>
         </div>
 
         {/* Planet Image container */}
         <div className="flex-1 flex justify-end items-end">
-          <img src="/planet.svg" alt="Planet" width={500} height={500} />
+          <img src="/planet.svg" alt="Planet" width={700} height={700} />
         </div>
       </div>
       
