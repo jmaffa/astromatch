@@ -66,31 +66,28 @@ export default function Signup() {
 
   // }
   return (
-    <div className="flex-col h-full bg-primary">
+    <div className="flex-col h-full bg-primary pb-20">
       {/* Arrows */}
-      <div className="flex justify-between px-5">
-        <div className="text-white">
+      <div className="flex justify-between">
+        <div className="text-white px-5">
           {/* TODO: Make this a button that navigates you home */}
-          <h1>←</h1>
-          <button>
-            <a target="_blank" href="https://astro-charts.com/">
-              Calculate your birth chart!
-            </a>
-          </button>
+          <h1 className="text-xl pt-6">←</h1>
+          <p className="pt-2 mt-6 w-1/2">(Pre Step) Calculate your birth chart! To find your list of matches, please calculate your birth chart <a target="_blank" href="https://astro-charts.com/" className="text-tertiary underline transition ease-in-out">here</a> and fill out the form when you have your results. </p>
+                
         </div>
         {/* TODO: Make the planet fit lol */}
         <div className="flex-1 flex justify-end items-end overflow-hidden">
-          <img src="/planet.svg" alt="Planet" width={300} />
+          <img src="/planet-2.svg" alt="Planet" width={1000} />
         </div>
       </div>
       {/* enter data */}
-      <div className="px-5">
-        <h1 className="text-white text-xl text-decoration-line: underline">
-          Enter Data
-        </h1>
-      </div>
       {/* form */}
-      <div className="text-white flex-row w-screen">
+      <div className="text-white flex-row w-screen -mt-60">
+        <div className="px-5">
+            <h1 className="text-white text-xl text-decoration-line: underline">
+            Enter Data
+            </h1>
+        </div>
         {/* Name */}
         <div className="flex flex-row justify-start pl-8 py-5">
           <div className=" text-left px-4 py-1 w-1/4">
@@ -99,7 +96,7 @@ export default function Signup() {
           </div>
           <div className="text-center px-4 py-1 w-1/3">
             <input
-              className="bg-primary-light text-white w-full rounded-md"
+              className="bg-primary-light text-white w-full rounded-md px-2 py-1"
               type="text"
               placeholder="Name"
               value={name}
@@ -125,7 +122,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio1"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Male
                 </label>
@@ -140,7 +137,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio2"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Female
                 </label>
@@ -155,7 +152,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio3"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Non-Binary
                 </label>
@@ -171,7 +168,7 @@ export default function Signup() {
           </div>
           <div className="text-center px-4 py-1 w-1/3">
             <input
-              className="bg-primary-light text-white w-full rounded-md"
+              className="bg-primary-light text-white w-full rounded-md px-2 py-1"
               type="text"
               placeholder="Aries, Pisces..."
               value={venus}
@@ -186,7 +183,7 @@ export default function Signup() {
           </div>
           <div className="text-center px-4 py-1 w-1/3">
             <input
-              className="bg-primary-light text-white w-full rounded-md"
+              className="bg-primary-light text-white w-full rounded-md px-2 py-1"
               type="text"
               placeholder="Sagittarius, Libra..."
               value={moon}
@@ -201,7 +198,7 @@ export default function Signup() {
           </div>
           <div className="text-center px-4 py-1 w-1/3">
             <input
-              className="bg-primary-light text-white w-full rounded-md"
+              className="bg-primary-light text-white w-full rounded-md px-2 py-1"
               type="text"
               placeholder="Aquarius, Taurus..."
               value={rising}
@@ -227,7 +224,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio4"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Romantic
                 </label>
@@ -242,7 +239,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio5"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Platonic
                 </label>
@@ -268,7 +265,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio6"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Male
                 </label>
@@ -283,7 +280,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio7"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Female
                 </label>
@@ -298,7 +295,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="radio8"
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer px-2"
                 >
                   Non-Binary
                 </label>
